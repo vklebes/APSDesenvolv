@@ -496,3 +496,42 @@ body{
 .perfil-bottom button{
     width: calc(50% - 10px);
 }
+.bottom-links{
+    bottom: 20px;
+    left: 60px;
+    position: absolute;
+}
+.bottom-links a{
+    color: #636363;
+    font-size: 13px;
+    text-decoration: none;
+}
+.sobre-content{
+    padding-top:200px;
+}
+.sobre-content .home-top-content::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 2px;
+    background-color: white;
+}
+.sobre-mid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.sobre-mid .logo{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border:1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}

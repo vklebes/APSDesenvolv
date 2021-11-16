@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
         <!-- CSS -->
-        <link rel="stylesheet" href="./css/main.css"/>
+        <link rel="stylesheet" href="../css/main.css"/>
     </head>
 <body>
     <div class="wrap wrap-home">
@@ -32,7 +32,6 @@
                         <path d="M31.5 31.5L24.975 24.975" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>                        
                     <input type="text" class="input-transparent" placeholder="Procurar"/>
-                    <a href="sobre.html">Quem somos</a>
                 </div>
             </div>
             <div class="avatar-box" onclick="window.location.href='perfil.html'">
@@ -40,13 +39,31 @@
             </div>
         </div>
         <div class="bg-home">
-            <img src="./img/background_2.jpeg" alt="Plano de fundo"/>
+            <img src="../img/background_2.jpeg" alt="Plano de fundo"/>
         </div>
         <div class="home-content">
             <div class="home-top-content">
                 <div>
-                    <h2>Quem somos</h2>
+                    <h2>🔥 Trending</h2>
+                    <div class="filter-tab">
+                        <span>Filtro</span>
+                        <div class="drop-down-filter">
+                            <svg width="28" height="28" viewBox="0 0 37 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.25 13.875L18.5 23.125L27.75 13.875" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
+                <button class="btn btn-success btn-open-modal" style="width: 80px; height: 80px; border-radius: 50%;">
+                    <svg width="38" height="38" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M43.8533 26.52C46.2926 24.0807 47.663 20.7722 47.663 17.3225C47.663 13.8728 46.2926 10.5643 43.8533 8.125C41.4139 5.68567 38.1055 4.31527 34.6558 4.31527C31.206 4.31527 27.8976 5.68567 25.4583 8.125L10.8333 22.75V41.1667H29.2499L43.8533 26.52Z" stroke="white" stroke-width="4.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M34.6666 17.3333L4.33325 47.6667" stroke="white" stroke-width="4.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M37.9167 32.5H19.5" stroke="white" stroke-width="4.33333" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="home-mid-content">
+                <!-- Append -->
             </div>
         </div>
 
@@ -77,6 +94,6 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./js/funcoes.js"></script>
+    <script src="../js/funcoes.js"></script>
 </body>
 </html>

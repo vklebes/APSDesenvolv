@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
         <!-- CSS -->
-        <link rel="stylesheet" href="./css/main.css"/>
+        <link rel="stylesheet" href="../css/main.css"/>
     </head>
 <body>
     <div class="wrap wrap-perfil">
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="bg-home">
-            <img src="./img/background_2.jpeg"/>
+            <img src="../img/background_2.jpeg"/>
         </div>
         <div class="perfil-content">
             <div class="home-top-content">
@@ -73,6 +73,6 @@
 
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./js/funcoes.js"></script>
+    <script src="../js/funcoes.js"></script>
 </body>
 </html>
