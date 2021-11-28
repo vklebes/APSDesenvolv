@@ -31,18 +31,18 @@
             <div class="create-wrap">
                 <h1>CRIE SUA CONTA</h1>
                 <p>Já possui uma conta? <span onclick="toggleLogin();">Faça seu login</span></p>
-            
+            <form action="auth/register.php" method="POST">
                 <div class="login-box-form">
                     <div class="input-box">
-                        <input type="text" class="custom-input"/>
+                        <input name="firstname" type="text" class="custom-input"/>
                         <label>Nome</label>
                     </div>
                     <div class="input-box">
-                        <input type="text" class="custom-input"/>
+                        <input name="lastname" type="text" class="custom-input"/>
                         <label>Sobrenome</label>
                     </div>
                     <div class="input-box fullwidth">
-                        <input type="text" class="custom-input" id="txtCriarEmail"/>
+                        <input name="email" type="text" class="custom-input" id="txtCriarEmail"/>
                         <label>Email</label>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -50,7 +50,7 @@
                         </svg>
                     </div>
                     <div class="input-box fullwidth">
-                        <input type="password" class="custom-input"/>
+                        <input name="password" type="password" class="custom-input"/>
                         <label>Senha</label>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -66,18 +66,19 @@
                         </svg>                        
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary" onclick="createAccount();" title="Criar conta">Criar conta</button>
-            </div>
-        </form>
-        <form action="auth/login.php" method="POST">
+                <button type="submit" class="btn btn-primary" title="Criar conta">Criar conta</button>
+            </form>
+        </div>
+        
+        
             <div class="login-wrap hidden" style="opacity: 0;">
                 <h1>FAÇA SEU LOGIN</h1>
                 <p>Ainda nao possui uma conta? <span onclick="toggleLogin();">Crie sua conta</span></p>
-        
+                <form action="auth/login.php" method="POST">
                 <div class="login-box-form">
                     <div class="input-box fullwidth">
                         <input name="email" type="text" class="custom-input"/>
-                        <label>Email</label name="email">
+                        <label>Email</label>
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M22 6L12 13L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -93,8 +94,9 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" title="Fazer login">Fazer login</button>
+                </form>
             </div>
-        </form>
+
         </div>
     </div>
     
