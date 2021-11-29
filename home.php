@@ -1,5 +1,5 @@
 <?php
-include('checkauth.php');
+//include('checkauth.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,7 @@ include('checkauth.php');
                         <path d="M31.5 31.5L24.975 24.975" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>                        
                     <input type="text" class="input-transparent" placeholder="Procurar"/>
-                    <a href="sobre.html">Quem somos</a>
+                    <a href="sobre.php">Quem somos</a>
                 </div>
             </div>
             <div class="avatar-box" onclick="window.location.href='perfil.html'">

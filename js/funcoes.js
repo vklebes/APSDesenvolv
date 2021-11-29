@@ -176,3 +176,18 @@ function ValidarEmail (email) {
     var emailPattern =  /^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/;
     return emailPattern.test(email); 
 }
+
+function previewFile(_that) {
+
+    let reader = new FileReader();
+    let file = _that.files[0];
+  
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      const data64 = reader.result;
+      console.log(data64);
+
+      $(".avatar-icon").css("background-image", "url('" + data64.replace(/(\r\n|\n|\r)/gm, "") + "')");
+    };
+    
+}
