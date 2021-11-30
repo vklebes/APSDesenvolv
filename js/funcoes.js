@@ -101,7 +101,10 @@ $(() => {
                     <p>${el.texto}</p>
                     <div>
                         <div>
-                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            <div style="width:24px; height:24px; position:relative;">
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 likeIcon liked" onclick="likePost(this);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1 likeIcon" onclick="likePost(this);"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
                             <span>${el.likes}</span>
                         </div>
                         <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
@@ -185,9 +188,27 @@ function previewFile(_that) {
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       const data64 = reader.result;
-      console.log(data64);
 
       $(".avatar-icon").css("background-image", "url('" + data64.replace(/(\r\n|\n|\r)/gm, "") + "')");
     };
     
+}
+
+function likePost(_that){
+    let likes;
+
+    $(_that).css("display", "none");
+    $(_that).removeClass("anim");
+    likes = parseInt($(_that).closest("div").next("span").text());
+
+    if($(_that).hasClass("liked")){
+        $(_that).closest("div").find("svg:last-child").css("display", "block");
+        
+        likes--;
+    } else{
+        $(_that).closest("div").find("svg:first-child").css("display", "block").addClass("anim");
+        likes++;
+    }
+
+    $(_that).closest("div").next("span").text(likes);
 }

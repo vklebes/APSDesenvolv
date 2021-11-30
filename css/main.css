@@ -622,6 +622,32 @@ body{
     box-shadow: 0px 2px 3px 0px #8364be5d;
     cursor: pointer;
 }
+.likeIcon{
+    position: absolute;
+    top:0;
+    left:0;
+}
+.liked{
+    stroke:#ff5050 !important;
+    fill:#ff5050 !important;
+    display: none;
+}
+
+.anim{
+    animation: like .2s ease-out;
+}
+
+@keyframes like{
+    0%{
+        transform: scale(.8);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
 
 @media screen and (max-width:1150px){
     .login-box{
