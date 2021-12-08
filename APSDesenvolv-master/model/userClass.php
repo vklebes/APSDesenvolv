@@ -1,6 +1,7 @@
 <?php
 class User {
   // Properties
+  public $user_id;
   public $firstName;
   public $lastName;
   public $email;
@@ -8,7 +9,12 @@ class User {
   public $picture;
 
   // Methods
-
+  function setUserID($user_id) {
+    $this->user_id = $user_id;
+  }
+  function getUserID() {
+    return $this->user_id;
+  }
   function getFirstName() {
     return $this->firstName;
   }
@@ -18,13 +24,13 @@ class User {
   function getLastName() {
     return $this->lastName;
   }
-  function setLastName($name) {
+  function setLastName($lastName) {
     $this->lastName = $lastName;
   }
   function getEmail() {
     return $this->email;
   }
-  function setEmail($name) {
+  function setEmail($email) {
     $this->email = $email;
   }
   function getPassword() {
@@ -39,8 +45,6 @@ class User {
   function setPicture($picture) {
     $this->picture = $picture;
   }
-  function getFullName(){
-      return getFirstName()  + ` ` + getLastName();
-  }
+
 }
 ?>

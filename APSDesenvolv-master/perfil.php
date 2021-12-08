@@ -1,6 +1,7 @@
 <?php
 session_start();
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,12 +10,11 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>APS - Login</title>
     
-        <!-- Font -->
+   
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     
-        <!-- CSS -->
         <link rel="stylesheet" href="./css/main.css"/>
     </head>
 <body>
@@ -30,7 +30,7 @@ session_start();
                     </svg>
                 </div>
             </div>
-            <div class="avatar-box" onclick="window.location.href='perfil.html'">
+            <div class="avatar-box" onclick="window.location.href='perfil.php'">
                 <div class="avatar-icon"></div>
             </div>
         </div>
@@ -43,7 +43,7 @@ session_start();
                     <h2>Perfil</h2>
                 </div>
             </div>
-            <form action=""method="post" enctype="multipart/form-data">
+            <form method="post">
                 <div class="perfil-form">
                     <div class="avatar-area">
                         <div class="avatar-box avatar-giant">
@@ -51,21 +51,22 @@ session_start();
                             <label for="txtPhoto" class="buttonImportPhoto" title="Importar foto">
                                 <svg viewBox="0 0 24 24" width="24" height="24" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
                             </label>
-                            <input type="file" id="txtPhoto" name="txtPhoto" accept="image/png, image/jpeg" onchange="previewFile(this)" style="display: none;"/>
+                            <input name="picture" type="file" id="txtPhoto" name="txtPhoto" accept="image/png, image/jpeg" onchange="previewFile(this)" style="display: none;"/>
                         </div>
-                        <h1><?php
-                        $_SESSION['email'];
-                        ?></h1>
+                            <?php 
+                                $fullName = $_SESSION['fullName'];
+                                echo "<h1>".$fullName."</h1>";
+                           ?>
                     </div>
                     <div>
                         <div class="input-box">
-                            <input type="text" class="custom-input" value="Victor"/>
+                            <input name="firstName" type="text" class="custom-input" value="<?=$_SESSION['firstName'];?>"/>
                         </div>
                         <div class="input-box">
-                            <input type="text" class="custom-input" value="Klebes"/>
+                            <input name="lastName" type="text" class="custom-input" value="<?=$_SESSION['lastName'];?>"/>
                         </div>
-                         <div class="input-box fullwidth">
-                            <input type="text" class="custom-input" value="vklebes@hotmail.com"/>
+                        <div class="input-box fullwidth">
+                            <input name="email"type="text" class="custom-input" value="<?=$_SESSION['email'];?>"/>
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                 <path d="M22 6L12 13L2 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -74,7 +75,7 @@ session_start();
                     </div>
                     <div class="perfil-bottom">
                         <button type="button" class="btn btn-default" onclick="window.location.href='home.php'">Descartar</button>
-                        <button type="button" class="btn btn-primary" onclick="salvarAlteracoes();">Salvar alterações</button>
+                        <button type="submit" class="btn btn-primary">Salvar alterações</button>
                     </div>
                     <a href="auth/logout.php">Sair</a>
                 </div>
@@ -82,8 +83,14 @@ session_start();
         </div>
     </div>
 
-    <!-- Scripts -->
+  
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/funcoes.js"></script>
+    <script>
+        $(() => {
+            const data64 = "<?=base64_encode($_SESSION['picture']);?>"
+            $(".avatar-icon").css("background-image", "url('data:image/jpeg;base64," + data64.replace(/(\r\n|\n|\r)/gm, "") + "')");
+        });
+    </script>
 </body>
 </html>

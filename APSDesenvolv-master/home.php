@@ -1,5 +1,5 @@
 <?php
-//include('checkauth.php');
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +22,7 @@
         <div class="menu">
             <div class="menu-mask"></div>
             <div>
-                <div class="logo" style="cursor:pointer;" onclick="window.location.href='home.html'">
+                <div class="logo" style="cursor:pointer;" onclick="window.location.href='home.php'">
                     <svg width="63" height="46" viewBox="0 0 63 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <rect x="31.2146" width="20.9098" height="20.9098" transform="rotate(45 31.2146 0)" fill="white"/>
                         <rect x="47.6437" y="16.4291" width="20.9098" height="20.9098" transform="rotate(45 47.6437 16.4291)" fill="white"/>
@@ -72,30 +72,32 @@
         </div>
 
         <!-- Modal -->
-        <div class="mask-wrap">
-            <div class="modal-new-content">
-                <div class="modal-new-content-top">
-                    <h2>Novo comentário</h2>
-                    <button class="btn-close" type="button">
-                        <svg viewBox="0 0 24 24" width="24" height="24" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-                    </button>
-                </div>
-                <div class="modal-new-content-message">
-                    <div class="input-box fullwidth">
-                        <input type="text" class="custom-input" placeholder="Insira o nome do anime..." value=""/>
-                        <svg viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+        <form method="POST" action="messageController/messageCreator.php">
+         <div class="mask-wrap">
+             <div class="modal-new-content">
+                    <div class="modal-new-content-top">
+                        <h2>Novo comentário</h2>
+                        <button class="btn-close" type="button">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                        </button>
                     </div>
-                    <div class="input-box fullwidth">
-                        <textarea class="custom-input" cols="30" rows="13" placeholder="Digite seu comentário..." style="resize: none; font-family: 'Nunito Sans', sans-serif;"></textarea>
+                    <div class="modal-new-content-message">
+                        <div class="input-box fullwidth">
+                            <input type="text" name="anime" class="custom-input" placeholder="Insira o nome do anime..." value=""/>
+                         <svg viewBox="0 0 24 24" width="20" height="20" stroke="white" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                     </div>
+                        <div class="input-box fullwidth">
+                         <textarea name="message" class="custom-input" cols="30" rows="13" placeholder="Digite seu comentário..." style="resize: none; font-family: 'Nunito Sans', sans-serif;"></textarea>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <button type="button" class="btn btn-primary">Postar comentário</button>
+                    <div>
+                        <button type="submit" class="btn btn-primary">Postar comentário</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
+    </form>
+        
     <!-- Scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="./js/funcoes.js"></script>

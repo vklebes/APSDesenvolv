@@ -19,7 +19,6 @@ if($row['total'] == 1) {
 
 $sql = "INSERT INTO users (FirstName, LastName, Email, Password, timestamp) VALUES ('$FirstName', '$LastName', '$Email', '$Password', NOW());";
 
-
 if($connection->query($sql) === TRUE) {
 	$_SESSION['register_status'] = true;
 }
@@ -28,4 +27,4 @@ $connection->close();
 
 header('Location: ../home.php');
 exit;
-?>
+?> 
